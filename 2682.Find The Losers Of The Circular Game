@@ -1,0 +1,32 @@
+class Solution {
+    public int[] circularGameLosers(int n, int k) {
+        int[] arr= new int[n];
+        for(int h=1;h<=n;h++)
+        {
+            arr[h-1]=h;
+        }
+        int size=n;
+        int d=0;
+        int i=0;
+       while(arr[i%n]!=0)
+    {
+        
+        arr[i%n]=0;
+        size--;
+        d++;
+        i=i+d*k;
+    }
+    int[] arr1=new int[size];
+       if(arr[i%n]==0)
+        {
+            Arrays.sort(arr);
+            
+            for(int j=0;j<size;j++)
+            {
+                arr1[j]=arr[n-1-j];
+            }
+        }
+        Arrays.sort(arr1);
+        return arr1;
+    }
+}
