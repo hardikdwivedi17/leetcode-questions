@@ -1,0 +1,15 @@
+class Solution {
+  public boolean isBalanced(TreeNode root) {
+    if (root == null)
+      return true;
+    return Math.abs(Depth(root.left) - Depth(root.right)) <= 1 && 
+        isBalanced(root.left) &&                                        
+        isBalanced(root.right);
+  }
+
+  private int Depth(TreeNode root) {
+    if (root == null)
+      return 0;
+    return 1 + Math.max(Depth(root.left), Depth(root.right));
+  }
+}
