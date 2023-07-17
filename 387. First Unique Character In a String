@@ -1,0 +1,25 @@
+class Solution {
+    public int firstUniqChar(String s) {
+      int[] a= new int[s.length()];
+      Arrays.fill(a,0);
+       char[] g = s.toCharArray();
+       int i=0;
+      for(int j=0;j<s.length();j++)
+      { boolean t=true;
+      if(a[j]==0)
+      {for(int k=j+1;k<s.length();k++)
+          {
+              if(g[j]==g[k])
+              {t=false;
+              a[k]=1;
+               
+              }
+          }
+          if(t==true)
+          return j;
+      }}
+
+        
+       return -1;
+    }
+}
