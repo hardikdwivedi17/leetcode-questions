@@ -1,0 +1,47 @@
+class Solution
+{
+    public int getSum(int a, int b) {
+        int count=0;
+        if((a>=0 && b>=0)||(a<0 && b<0))
+        {   if(a>=b)
+            {count=Math.abs(a);
+            int h=Math.abs(b);
+                for(int i=0;i<h;i++)
+                count++;
+            }
+            else if(b>a)
+            {
+                {count=Math.abs(b);
+                int h=Math.abs(a);
+                for(int i=0;i<h;i++)
+               count++;
+
+                }
+            }
+            if(a<0 && b<0)
+            return -count;
+            else
+            return count;
+            }
+            else if((a>=0 && b<0)||(a<0 && b>=0))
+            {
+            if(a<b)
+            {
+                count=a;
+                for(int i=0;i<b;i++)
+                count++;
+            }
+            else if(b<a)
+            {
+                count=b;
+                for(int i=0;i<a;i++)
+                count++;
+            }
+            return count;
+
+        }
+        return 0;
+
+    }
+    
+}
