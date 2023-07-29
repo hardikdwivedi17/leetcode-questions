@@ -1,0 +1,18 @@
+class Solution {
+    public String restoreString(String s, int[] indices) {
+      String[] arr= new String[s.length()];
+      int j=0;
+      String o= new String();
+      for(int i:indices)
+      {
+          arr[i]=Character.toString(s.charAt(j));
+          j++;
+      }
+      for(int i=0;i<s.length();i++)
+      {o=o+arr[i];
+
+      }
+      return o;
+
+    }
+}
